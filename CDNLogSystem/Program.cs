@@ -8,21 +8,30 @@ namespace MyConsoleApp
     {
         static void Main(string[] args)
         {
-            string logPath = "C:\\Development\\Interviews\\2024-05-22 - Unecont\\Code\\Samples\\input1 - Minha CDN.txt";
+            string logPath = string.Empty;
 
-            //StringBuilder builder = new();
-            //builder.AppendLine("The following arguments are passed:");
+            try
+            {
+                logPath = "C:\\Development\\Interviews\\2024-05-22 - Unecont\\Code\\CDNLogSystem\\Samples\\input1 - Minha CDN.txt";
 
-            //// Display the command line arguments using the args variable.
-            //foreach (var arg in args)
-            //{
-            //    builder.AppendLine($"Argument={arg}");
-            //}
+                //StringBuilder builder = new();
+                //builder.AppendLine("The following arguments are passed:");
 
-            //string logPath = args[0];
+                //// Display the command line arguments using the args variable.
+                //foreach (var arg in args)
+                //{
+                //    builder.AppendLine($"Argument={arg}");
+                //}
 
-            string logContent = ReadLog(logPath);
-            ProccessLog(logContent);
+                //string logPath = args[0];
+
+                string logContent = ReadLog(logPath);
+                ProccessLog(logContent);
+            }
+            catch (Exception ex)
+            {
+                Console.Write("Não foi possível ler o log " + logPath + ". Exceção: " + ex.Message + ". StackTrace: " + ex.StackTrace);
+            }
         }
 
         private static bool PathIsUrl(string path)
@@ -42,29 +51,22 @@ namespace MyConsoleApp
 
         private static string ReadLog(string logUri)
         {
-            try
+            if (PathIsUrl(logUri))
             {
-                if (PathIsUrl(logUri))
-                {
-                    var webRequest = WebRequest.Create(logUri);
+                var webRequest = WebRequest.Create(logUri);
 
-                    using var response = webRequest.GetResponse();
-                    using var content = response.GetResponseStream();
-                    using var reader = new StreamReader(content);
-                    var strContent = reader.ReadToEnd();
+                using var response = webRequest.GetResponse();
+                using var content = response.GetResponseStream();
+                using var reader = new StreamReader(content);
+                var strContent = reader.ReadToEnd();
 
-                    return strContent;
-                }
-                else
-                {
-                    string contents = File.ReadAllText(logUri);
-
-                    return contents;
-                }
+                return strContent;
             }
-            catch (Exception ex)
+            else
             {
-                return ex.Message + ".\n StackTrace: " + ex.StackTrace;
+                string contents = File.ReadAllText(logUri);
+
+                return contents;
             }
         }
 
