@@ -12,18 +12,7 @@ namespace MyConsoleApp
 
             try
             {
-                logPath = "C:\\Development\\Interviews\\2024-05-22 - Unecont\\Code\\CDNLogSystem\\Samples\\input1 - Minha CDN.txt";
-
-                //StringBuilder builder = new();
-                //builder.AppendLine("The following arguments are passed:");
-
-                //// Display the command line arguments using the args variable.
-                //foreach (var arg in args)
-                //{
-                //    builder.AppendLine($"Argument={arg}");
-                //}
-
-                //string logPath = args[0];
+                logPath = args[0];
 
                 string logContent = ReadLog(logPath);
                 ProccessLog(logContent);
