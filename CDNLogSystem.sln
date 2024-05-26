@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CDNLogSystem", "CDNLogSystem\CDNLogSystem.csproj", "{14E2D272-D086-45C3-9B69-6FF80C48E1CC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{14E2D272-D086-45C3-9B69-6FF80C48E1CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14E2D272-D086-45C3-9B69-6FF80C48E1CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14E2D272-D086-45C3-9B69-6FF80C48E1CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14E2D272-D086-45C3-9B69-6FF80C48E1CC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FE6F6D7C-0EA8-4DD6-804F-15CFD74B7EB9}
+	EndGlobalSection
+EndGlobal
